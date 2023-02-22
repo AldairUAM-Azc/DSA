@@ -7,15 +7,18 @@ package com.dsa.app;
 
 public class App {
     public static void main(String[] args) {
-        // System.out.println("Hello Remote World!");
-        // System.out.println(Factorial.getFactorial(5));
-        // System.out.println(NumeroFuerte.esNumeroFuerte(145));
-        // System.out.println(Primo.esPrimo(4));
-        // StarLadder.buildLadder(5);
-        Racional a = new Racional(7,9);
-        Racional suma = a.suma(new Racional(7,8));
-        System.out.println(suma.getString());
-        // a.getString();
-        
+        int[] nums = new int[] {1,2,3,4,5};
+        Arreglos arr1 = new Arreglos(nums);
+
+        // Arreglos arreglos = new Arreglos();
+        System.out.println("This is your array: ");
+        // arreglos.print();
+        System.out.println(arr1.toString());
+        // System.out.println(arr1.suma());
+        // System.out.println(arreglos.medio());
+        // System.out.println(arreglos.prom());
+        // System.out.println(arreglos.max());
+        // System.out.println(arreglos.maxIndex());
     }
+
 }
