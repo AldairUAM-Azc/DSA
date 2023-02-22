@@ -75,7 +75,7 @@ public class Arreglos {
       res = res.concat(String.valueOf(this.info[i]));
       res = res.concat(" ");
     }
-    String res = new String("]");
+    res = res.concat("]");
     return res;
   }
 
