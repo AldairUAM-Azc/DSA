@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Arreglos {
-
   int[] info;
 
   public Arreglos() {
@@ -30,8 +29,8 @@ public class Arreglos {
     s.close();
   }
 
-  public Arreglos(int[] n){
-    this.info =  n;
+  public Arreglos(int[] n) {
+    this.info = n;
   }
 
   public int medio() {
@@ -68,6 +67,27 @@ public class Arreglos {
     return maxIndex;
   }
 
+  public int minIndex() {
+    int minIndex = 0;
+    for (int n = 1; n < info.length; n++) {
+      if (this.info[n] < this.info[minIndex])
+        minIndex = n;
+    }
+    return minIndex;
+  }
+
+  public void selectionSort() {
+    for (int i = 0; i < this.info.length-2; i++) {
+      int minIndex = i;
+      for (int j = i + 1; j < this.info.length; j++) {
+          if (this.info[j] < this.info[minIndex]) {
+          minIndex = j;
+        }
+      }
+      swap(this.info, i, minIndex);
+    }
+  }
+
   @Override
   public String toString() {
     String res = new String("[");
@@ -85,4 +105,9 @@ public class Arreglos {
     }
   }
 
+  private static void swap(int[] array, int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }

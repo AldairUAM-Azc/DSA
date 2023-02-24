@@ -14,7 +14,7 @@ public class Tarea1 {
     // printPowers(125);
     // System.out.println(hypothenuse(3,4));
     // buildLadder(5);
-    int[] nums = new int[]{12,27,17,17,20};
+    int[] nums = new int[] { 12, 27, 17, 17, 20 };
     System.out.println(estadisticos(nums).toString());
   }
 
@@ -26,7 +26,6 @@ public class Tarea1 {
   // 2.Calcular la media, mediana y moda de 5 números.
   public static int[] estadisticos(int[] nums) {
     int[] estadisticos = new int[3];
-
     sort(estadisticos);
 
     int sum = 0;
@@ -36,30 +35,22 @@ public class Tarea1 {
 
     Hashtable<Integer, Integer> counter = new Hashtable<>();
     int mode = nums[0];
-    for (int n: nums) {
-      
-      if(counter.get(n) == null){
+    for (int n : nums) {
+
+      if (counter.get(n) == null) {
         counter.put(n, 1);
-      }else{
+      } else {
         counter.put(n, counter.get(n) + 1);
       }
-      if(counter.get(n) > counter.get(mode)){
+      if (counter.get(n) > counter.get(mode)) {
         mode = n;
       }
     }
-    
+
     estadisticos[0] = sum / nums.length; // media
     estadisticos[1] = nums[nums.length / 2]; // median giving the nums array is sorted
-    estadisticos[2] = mode; //mode
+    estadisticos[2] = mode; // mode
     return estadisticos;
-  }
-
-  private static boolean contains(int[] nums, int number){
-    for (int n: nums) {
-      if(number == n)
-        return true;
-    }
-    return false;
   }
 
   // 3. Calcula el area de un circulo dado el radio
@@ -147,5 +138,4 @@ public class Tarea1 {
       }
     }
   }
-
 }
