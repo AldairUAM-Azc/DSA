@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch UsoDeOsos",
+            "request": "launch",
+            "mainClass": "com.dsa.app.UsoDeOsos",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Launch Tarea1",
             "request": "launch",
             "mainClass": "com.dsa.tarea1.Tarea1",

@@ -1,6 +1,5 @@
 package com.dsa.app;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Arreglos {

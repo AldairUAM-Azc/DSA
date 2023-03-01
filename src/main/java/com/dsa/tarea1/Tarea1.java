@@ -22,6 +22,9 @@ public class Tarea1 {
   public static int suma(int a, int b) {
     return a + b;
   }
+  public static int mode(int[] nums){
+    return 1;
+  }
 
   // 2.Calcular la media, mediana y moda de 5 números.
   public static int[] estadisticos(int[] nums) {
