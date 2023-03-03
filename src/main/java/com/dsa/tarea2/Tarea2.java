@@ -1,7 +1,6 @@
 package com.dsa.tarea2;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class Tarea2 {
   public static void main(String[] args) {

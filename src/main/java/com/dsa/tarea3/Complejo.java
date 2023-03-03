@@ -2,7 +2,7 @@ package com.dsa.tarea3;
 
 import java.util.Scanner;
 
-public class Complejo implements Comparable<Complejo>{
+public class Complejo implements Comparable<Complejo> {
   private double real;
   private double i;
   private double modulo;
@@ -12,8 +12,8 @@ public class Complejo implements Comparable<Complejo>{
     this.i = i;
     this.modulo = this.modulo();
   }
-  
-  public Complejo(){
+
+  public Complejo() {
     Scanner s = new Scanner(System.in);
     System.out.println("Introduzca parte real: ");
     this.real = Double.parseDouble(s.nextLine().trim());
@@ -35,21 +35,20 @@ public class Complejo implements Comparable<Complejo>{
     double imaginario = this.real * c.i + this.i * c.real;
     return new Complejo(real, imaginario);
   }
-  
-  public Complejo divide(Complejo c){
+
+  public Complejo divide(Complejo c) {
     double conjugado = Math.pow(c.real, 2) + Math.pow(c.i, 2);
     double real = (this.real * c.real + this.i * c.i) / conjugado;
     double imaginario = (this.i * c.real - this.real * c.i) / conjugado;
     return new Complejo(real, imaginario);
   }
 
-  private double modulo(){
+  private double modulo() {
     return Math.pow(this.real * this.real + this.i * this.i, 0.5);
   }
 
-  private double simplificar(){
-    //TODO implement algorithm to simplify fractions
-    return 0;
+  public double getModulo() {
+    return modulo;
   }
 
   @Override
@@ -75,11 +74,11 @@ public class Complejo implements Comparable<Complejo>{
 
   @Override
   public int compareTo(Complejo o) {
-    if(this.modulo > o.modulo){
+    if (this.modulo > o.modulo) {
       return 1;
-    } else if(this.modulo < o.modulo){
+    } else if (this.modulo < o.modulo) {
       return -1;
-    }else{
+    } else {
       return 0;
     }
   }
