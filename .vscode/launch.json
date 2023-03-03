@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WriteServer",
+            "request": "launch",
+            "mainClass": "com.dsa.chat.WriteServer",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "WriteServer",
+            "request": "launch",
+            "mainClass": "com.chat.WriteServer",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Arreglo",
+            "request": "launch",
+            "mainClass": "com.dsa.tarea2.Arreglo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Libro",
+            "request": "launch",
+            "mainClass": "com.dsa.libros.Libro",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Tarea2",
             "request": "launch",
             "mainClass": "com.dsa.tarea2.Tarea2",

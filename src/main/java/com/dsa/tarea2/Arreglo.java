@@ -2,11 +2,11 @@ package com.dsa.tarea2;
 
 import java.util.Scanner;
 
-public class Arreglos {
+public class Arreglo {
   int[] info;
 
-  public Arreglos() {
-    System.out.println("Tamanio: ");
+  public Arreglo() {
+    System.out.println("Tamanio del arreglo: ");
     Scanner s = new Scanner(System.in);
     int n = s.nextInt();
     this.info = new int[n];
@@ -16,6 +16,17 @@ public class Arreglos {
       info[i] = s.nextInt();
     }
     s.close();
+  }
+
+  public static void main(String[] args){
+    Arreglo miArreglo = new Arreglo();
+    System.out.println("\nEste es tu arreglo de numeros\n" + miArreglo.toString() + "\n");
+    System.out.println("El arreglo tiene:");
+    System.out.println("a. " + miArreglo.cuentaPositivos() + " numeros positivos");
+    System.out.println("b. " + miArreglo.cuentaNegativos() + " numeros negativos");
+    System.out.println("c. " + miArreglo.cuentaPares() + " numeros pares");
+    System.out.println("d. " + miArreglo.cuentaImpares() + " numeros impares");
+    System.out.println("e. " + miArreglo.cuentaParesPositivos() + " numeros positivos y pares");
   }
 
   public int cuentaPositivos() {

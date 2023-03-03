@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import com.dsa.tarea1.Tarea1;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
