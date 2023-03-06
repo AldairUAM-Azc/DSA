@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CambioBase",
+            "request": "launch",
+            "mainClass": "com.dsa.app.CambioBase",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "com.dsa.pilas.Main",

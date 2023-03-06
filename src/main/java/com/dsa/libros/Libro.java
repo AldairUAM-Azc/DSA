@@ -22,17 +22,17 @@ public class Libro {
     System.out.println();
 
     Libro l2 = new Libro("knuth", "El arte de programar", 2);
-    System.out.println("Son igulaes\n" + l1 + " y \n" + l2 +"\n"+ l1.equals(l2)+"\n");
+    System.out.println("Son igulaes\n" + l1 + " y \n" + l2 + "\n" + l1.equals(l2) + "\n");
     String s = "Cervantes";
-    System.out.println("Son igulaes\n" + l1 + " y\n " + s +"\n"+ l1.equals(s)+"\n");
+    System.out.println("Son igulaes\n" + l1 + " y\n " + s + "\n" + l1.equals(s) + "\n");
     Libro b = null;
-    System.out.println("Son iguales\n" + l1 + " y " + "null" + "\n"+ l1.equals(b)+"\n");
-    System.out.println("Son iguales\n" + l1 + " y " + l1 + "\n" + l1.equals(l1)+"\n");
+    System.out.println("Son iguales\n" + l1 + " y " + "null" + "\n" + l1.equals(b) + "\n");
+    System.out.println("Son iguales\n" + l1 + " y " + l1 + "\n" + l1.equals(l1) + "\n");
     // Clonación de l1
     Libro copiaL1 = (Libro) l1.clone();
-    System.out.println("Son igulaes\n" + l1 + " y uno igual " + "\n"+ l1.equals(copiaL1)+"\n");
+    System.out.println("Son igulaes\n" + l1 + " y uno igual " + "\n" + l1.equals(copiaL1) + "\n");
     Object copiaL2O = l2.clone();
-    System.out.println("Son iguales\n" + l2 + " y " + copiaL2O +"\n"+ l2.equals(copiaL2O)+"\n");
+    System.out.println("Son iguales\n" + l2 + " y " + copiaL2O + "\n" + l2.equals(copiaL2O) + "\n");
   }
 
   Libro(Object o) {
@@ -45,7 +45,7 @@ public class Libro {
 
   @Override
   public String toString() {
-    return "Libro [titulo=" + titulo + ", autor=" + autor + ", clave=" + clave + "]";
+    return "Libro [titulo =" + titulo + ", autor=" + autor + ", clave=" + clave + "]";
   }
 
   @Override

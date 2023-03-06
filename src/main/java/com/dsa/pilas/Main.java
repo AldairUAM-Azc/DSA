@@ -7,7 +7,7 @@ public class Main {
     for (int i = 0; i < 3; i++) {
      mypila.push(Integer.valueOf(i));
     }
-    System.out.println(mypila);
+    System.out.println(mypila); //should throw error
     mypila.push(Integer.valueOf(3));
     System.out.println("");
 
