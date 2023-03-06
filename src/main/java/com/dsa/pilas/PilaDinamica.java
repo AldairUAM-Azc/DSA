@@ -1,5 +1,9 @@
 package com.dsa.pilas;
 
+import java.util.Stack;
+
+import javax.naming.LimitExceededException;
+
 public class PilaDinamica {
   private Nodo tope;
 
@@ -16,9 +20,8 @@ public class PilaDinamica {
   }
 
   public Object pop() {
-    if (tope == null) {
-      throw new Error("Ya esta vacia la pila, goloso  \\Uwu/");
-    }
+    if (vacia())
+      throw new StackNoMoreElements("Ya no hay elementos.");
     Nodo popped = tope;
     tope = tope.getLiga();
     return popped.getInfo();
@@ -30,12 +33,12 @@ public class PilaDinamica {
 
   @Override
   public String toString() {
-    if(vacia())
+    if (vacia())
       return "[]";
     Nodo tempTope = tope;
     String separator = " -> ";
     String str = "[ ";
-    while (tempTope != null){
+    while (tempTope != null) {
       str += tempTope.getInfo() + separator;
       tempTope = tempTope.getLiga();
     }

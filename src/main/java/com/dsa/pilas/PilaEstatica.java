@@ -17,19 +17,19 @@ public class PilaEstatica {
 
   public void push(Object obj){
     if(tope >= this.info.length - 1)
-      throw new Error("No cabe pa");
+      throw new StackNoMoreElements("No cabe pa");
     tope++;
     this.info[tope] = obj;
   }
 
   public Object pop(){
     if(tope < 0)
-      throw new Error("Hasta aqui llego pa");
+      throw new StackNoMoreElements("Hasta aqui llego pa");
     return this.info[tope--];
   }
   public Object valTope(){
     if(this.vacia()){
-      throw new Error("Ya esta vacia");
+      throw new StackNoMoreElements("Ya esta vacia");
     }
     return this.info[this.tope];
   }
