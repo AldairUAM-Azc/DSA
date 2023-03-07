@@ -1,9 +1,5 @@
 package com.dsa.pilas;
 
-import java.util.Stack;
-
-import javax.naming.LimitExceededException;
-
 public class PilaDinamica {
   private Nodo tope;
 
