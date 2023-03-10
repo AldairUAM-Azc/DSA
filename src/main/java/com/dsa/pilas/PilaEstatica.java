@@ -17,25 +17,25 @@ public class PilaEstatica {
 
   public void push(Object obj){
     if(tope >= this.info.length - 1)
-      throw new StackNoMoreElements("No cabe pa");
+      throw new NoMoreElements("No cabe pa");
     tope++;
-    this.info[tope] = obj;
+    info[tope] = obj;
   }
 
   public Object pop(){
     if(tope < 0)
-      throw new StackNoMoreElements("Hasta aqui llego pa");
-    return this.info[tope--];
+      throw new NoMoreElements("Hasta aqui llego pa");
+    return info[tope--];
   }
   public Object valTope(){
     if(this.vacia()){
-      throw new StackNoMoreElements("Ya esta vacia");
+      throw new NoMoreElements("Ya esta vacia");
     }
-    return this.info[this.tope];
+    return info[tope];
   }
 
   @Override
   public String toString() {
-    return Arrays.toString(this.info);
+    return Arrays.toString(info);
   } 
 }

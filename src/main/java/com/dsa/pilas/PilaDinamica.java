@@ -1,9 +1,9 @@
 package com.dsa.pilas;
 
-public class PilaDinamica {
+public class PilaDinamica<T> {
   private Nodo tope;
 
-  PilaDinamica() {
+  public PilaDinamica() {
     tope = null;
   }
 
@@ -11,13 +11,13 @@ public class PilaDinamica {
     return tope == null;
   }
 
-  public void push(Object obj) {
+  public void push(T obj) {
     tope = new Nodo(obj, tope);
   }
 
   public Object pop() {
     if (vacia())
-      throw new StackNoMoreElements("Ya no hay elementos.");
+      throw new NoMoreElements("Ya no hay elementos.");
     Nodo popped = tope;
     tope = tope.getLiga();
     return popped.getInfo();

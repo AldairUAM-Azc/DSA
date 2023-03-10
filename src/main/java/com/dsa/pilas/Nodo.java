@@ -1,14 +1,14 @@
 package com.dsa.pilas;
 
-public class Nodo {
-  private Object info;
-  private Nodo liga;
+public class Nodo<T> {
+  private T info;
+  private Nodo<T> liga;
 
-  public Nodo(Object info) {
+  public Nodo(T info) {
     liga = null;
   }
 
-  public Nodo(Object info, Nodo liga) {
+  public Nodo(T info, Nodo<T> liga) {
     this.info = info;
     this.liga = liga;
   }
@@ -18,16 +18,19 @@ public class Nodo {
     return "Nodo [info=" + info + ", liga=" + liga + "]";
   }
 
+  
+
   @Override
-  protected Object clone() {
-    return new Nodo(this.info, this.liga);
+  protected Object clone() throws CloneNotSupportedException {
+    // TODO Auto-generated method stub
+    return super.clone();
   }
 
-  public Object getInfo() {
+  public T getInfo() {
     return info;
   }
 
-  public Nodo getLiga() {
+  public Nodo<T> getLiga() {
     return liga;
   }
 }
