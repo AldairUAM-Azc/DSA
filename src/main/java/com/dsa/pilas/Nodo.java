@@ -1,6 +1,6 @@
 package com.dsa.pilas;
 
-public class Nodo<T> {
+public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
   private T info;
   private Nodo<T> liga;
 
@@ -18,19 +18,16 @@ public class Nodo<T> {
     return "Nodo [info=" + info + ", liga=" + liga + "]";
   }
 
-  
-
-  @Override
-  protected Object clone() throws CloneNotSupportedException {
-    // TODO Auto-generated method stub
-    return super.clone();
-  }
-
   public T getInfo() {
     return info;
   }
 
   public Nodo<T> getLiga() {
     return liga;
+  }
+
+  @Override
+  public int compareTo(Nodo<T> o) {
+    return info.compareTo(o.getInfo());
   }
 }
