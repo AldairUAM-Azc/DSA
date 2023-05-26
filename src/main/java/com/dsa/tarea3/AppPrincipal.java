@@ -23,6 +23,7 @@ public class AppPrincipal {
 
       Scanner s = new Scanner(System.in);
       int option = Integer.parseInt(s.nextLine().trim());
+      s.close();
 
       switch (option) {
         case 1:
