@@ -12,7 +12,7 @@ public class Main {
     System.out.println("");
 
     //Pruebas PilaDinamica
-    PilaDinamica miDinamica = new PilaDinamica();
+    PilaDinamica<Object> miDinamica = new PilaDinamica<>();
     miDinamica.push("Camara camara camara vavavavava");
     miDinamica.push("1");
     miDinamica.push("2");
