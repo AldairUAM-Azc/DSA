@@ -1,7 +1,7 @@
 package com.dsa.pilas;
 
 public class PilaDinamica<T> {
-  private Nodo tope;
+  private Nodo<Object> tope;
 
   public PilaDinamica() {
     tope = null;
@@ -12,13 +12,13 @@ public class PilaDinamica<T> {
   }
 
   public void push(T obj) {
-    tope = new Nodo(obj, tope);
+    tope = new Nodo<Object>(obj, tope);
   }
 
   public Object pop() {
     if (vacia())
       throw new NoMoreElements("Ya no hay elementos.");
-    Nodo popped = tope;
+    Nodo<Object> popped = tope;
     tope = tope.getLiga();
     return popped.getInfo();
   }
@@ -31,7 +31,7 @@ public class PilaDinamica<T> {
   public String toString() {
     if (vacia())
       return "[]";
-    Nodo tempTope = tope;
+    Nodo<Object> tempTope = tope;
     String separator = " -> ";
     String str = "[ ";
     while (tempTope != null) {
