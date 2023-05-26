@@ -13,5 +13,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.fontVariations": false,
-  "editor.fontWeight": "450"
+  "editor.fontWeight": "450",
+  "java.debug.settings.onBuildFailureProceed": true,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
