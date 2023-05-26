@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Fila",
+            "request": "launch",
+            "mainClass": "com.dsa.filas.Fila",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "ListaEnlazada",
+            "request": "launch",
+            "mainClass": "com.dsa.listas.ListaEnlazada",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Lista",
+            "request": "launch",
+            "mainClass": "com.dsa.listas.Lista",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "AplicacionesPilas",
             "request": "launch",
             "mainClass": "com.dsa.app.AplicacionesPilas",
