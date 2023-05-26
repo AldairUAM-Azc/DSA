@@ -23,8 +23,6 @@ public class Libro {
 
     Libro l2 = new Libro("knuth", "El arte de programar", 2);
     System.out.println("Son igulaes\n" + l1 + " y \n" + l2 + "\n" + l1.equals(l2) + "\n");
-    String s = "Cervantes";
-    System.out.println("Son igulaes\n" + l1 + " y\n " + s + "\n" + l1.equals(s) + "\n");
     Libro b = null;
     System.out.println("Son iguales\n" + l1 + " y " + "null" + "\n" + l1.equals(b) + "\n");
     System.out.println("Son iguales\n" + l1 + " y " + l1 + "\n" + l1.equals(l1) + "\n");
