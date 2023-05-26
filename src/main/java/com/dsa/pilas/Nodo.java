@@ -1,10 +1,11 @@
 package com.dsa.pilas;
 
-public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
+public class Nodo<T> {
   private T info;
   private Nodo<T> liga;
 
   public Nodo(T info) {
+    this.info = info;
     liga = null;
   }
 
@@ -25,9 +26,7 @@ public class Nodo<T extends Comparable<T>> implements Comparable<Nodo<T>> {
   public Nodo<T> getLiga() {
     return liga;
   }
-
-  @Override
-  public int compareTo(Nodo<T> o) {
-    return info.compareTo(o.getInfo());
+  public void setLiga(Nodo<T> l) {
+    liga = l;
   }
 }
