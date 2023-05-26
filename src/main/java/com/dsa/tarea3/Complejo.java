@@ -20,6 +20,7 @@ public class Complejo implements Comparable<Complejo> {
     System.out.println("Introduzca parte imaginario: ");
     this.i = Double.parseDouble(s.nextLine().trim());
     this.modulo = this.modulo();
+    s.close();
   }
 
   public Complejo suma(Complejo c) {
