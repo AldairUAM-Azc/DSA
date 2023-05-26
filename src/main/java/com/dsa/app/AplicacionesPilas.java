@@ -1,7 +1,6 @@
 package com.dsa.app;
 
 import com.dsa.pilas.PilaDinamica;
-import com.dsa.pilas.PilaEstatica;
 
 public class AplicacionesPilas {
   public static void main(String[] args) {
@@ -10,7 +9,6 @@ public class AplicacionesPilas {
   }
 
   public static String cambioBase(int n, int b) {
-    // PilaEstatica p = new PilaEstatica(n); // TODO imrpove length of Stack
     PilaDinamica<Integer> p = new PilaDinamica<Integer>();
     if (n == 0)
       p.push(0);
