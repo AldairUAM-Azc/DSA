@@ -1,15 +1,15 @@
 package com.dsa.pilas;
 
-public class Nodo<T> {
-  private T info;
-  private Nodo<T> liga;
+public class Nodo {
+  private Comparable info;
+  private Nodo liga;
 
-  public Nodo(T info) {
+  public Nodo(Comparable info) {
     this.info = info;
     liga = null;
   }
 
-  public Nodo(T info, Nodo<T> liga) {
+  public Nodo(Comparable info, Nodo liga) {
     this.info = info;
     this.liga = liga;
   }
@@ -19,14 +19,14 @@ public class Nodo<T> {
     return "Nodo [info=" + info + ", liga=" + liga + "]";
   }
 
-  public T getInfo() {
+  public Comparable getInfo() {
     return info;
   }
 
-  public Nodo<T> getLiga() {
+  public Nodo getLiga() {
     return liga;
   }
-  public void setLiga(Nodo<T> l) {
+  public void setLiga(Nodo l) {
     liga = l;
   }
 }
