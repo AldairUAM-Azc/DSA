@@ -2,8 +2,8 @@ package com.dsa.nodos;
 
 public class NodoDoble {
   private Comparable info;
-  private Nodo prev;
-  private Nodo next;
+  private NodoDoble prev;
+  private NodoDoble next;
 
   public NodoDoble(Comparable info) {
     this.info = info;
@@ -30,19 +30,19 @@ public class NodoDoble {
     this.info = info;
   }
 
-  public Nodo getPrev() {
+  public NodoDoble getPrev() {
     return prev;
   }
 
-  public void setPrev(Nodo prev) {
+  public void setPrev(NodoDoble prev) {
     this.prev = prev;
   }
 
-  public Nodo getNext() {
+  public NodoDoble getNext() {
     return next;
   }
 
-  public void setNext(Nodo next) {
+  public void setNext(NodoDoble next) {
     this.next = next;
   }
 
