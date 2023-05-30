@@ -1,5 +1,7 @@
 package com.dsa.pilas;
 
+import com.dsa.nodos.Nodo;
+
 public class PilaDinamica<T> {
   private Nodo<Object> tope;
 

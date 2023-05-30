@@ -1,6 +1,6 @@
 package com.dsa.listas;
 
-import com.dsa.pilas.Nodo;
+import com.dsa.nodos.Nodo;
 
 /**
  * Lista

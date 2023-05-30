@@ -1,4 +1,4 @@
-package com.dsa.pilas;
+package com.dsa.nodos;
 
 public class Nodo {
   private Comparable info;
