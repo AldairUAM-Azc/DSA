@@ -1,17 +1,17 @@
 package com.dsa.nodos;
 
-public class Nodo {
+public class NodoDoble {
   private Comparable info;
   private Nodo prev;
   private Nodo next;
 
-  public Nodo(Comparable info) {
+  public NodoDoble(Comparable info) {
     this.info = info;
     prev = null;
     next = null;
   }
 
-  public Nodo(Comparable info, Nodo prev, Nodo next) {
+  public NodoDoble(Comparable info, Nodo prev, Nodo next) {
     this.info = info;
     this.prev = prev;
     this.next = next;
@@ -46,7 +46,4 @@ public class Nodo {
     this.next = next;
   }
 
-  \
-
-  
 }
