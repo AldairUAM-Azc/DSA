@@ -9,7 +9,7 @@ public class AplicacionesPilas {
   }
 
   public static String cambioBase(int n, int b) {
-    PilaDinamica<Integer> p = new PilaDinamica<Integer>();
+    PilaDinamica p = new PilaDinamica();
     if (n == 0)
       p.push(0);
     while (n > 0) {
@@ -26,7 +26,7 @@ public class AplicacionesPilas {
 
   public static String reverse(String str) {
     // PilaEstatica p = new PilaEstatica(str.length());
-    PilaDinamica<Character> p = new PilaDinamica<Character>();
+    PilaDinamica p = new PilaDinamica();
     for (char c : str.toCharArray())
       p.push(c);
     System.out.println(p);

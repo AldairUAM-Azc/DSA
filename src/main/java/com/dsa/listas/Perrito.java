@@ -31,11 +31,4 @@ public class Perrito implements Comparable<Perrito>{
     else if (this.edad < p.getEdad()) return -1;  
     return this.getNombre().compareTo(p.getNombre());
   }
-
-  @Override
-  public boolean equals(Perrito p) { // traer dudas de equals y hasch code
-    return true;
-  }
-
-  
 }
