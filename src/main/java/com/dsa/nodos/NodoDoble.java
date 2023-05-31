@@ -11,7 +11,7 @@ public class NodoDoble {
     next = null;
   }
 
-  public NodoDoble(Comparable info, Nodo prev, Nodo next) {
+  public NodoDoble(Comparable info, NodoDoble prev, NodoDoble next) {
     this.info = info;
     this.prev = prev;
     this.next = next;
@@ -19,7 +19,7 @@ public class NodoDoble {
 
   @Override
   public String toString() {
-    return "Nodo [info=" + info + ", prev=" + prev + "next=" + next + "]";
+    return "Nodo [info=" + info + ", prev=" + prev + ", next=" + next + "]";
   }
 
   public Comparable getInfo() {
