@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ListaDoble",
+            "request": "launch",
+            "mainClass": "com.dsa.listas.ListaDoble",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Fila",
             "request": "launch",
             "mainClass": "com.dsa.filas.Fila",
