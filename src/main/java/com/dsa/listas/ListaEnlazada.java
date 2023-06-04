@@ -6,7 +6,7 @@ import com.dsa.nodos.Nodo;
  * Lista
  */
 public class ListaEnlazada {
-  private Nodo cabeza;
+  protected Nodo cabeza;
 
   public ListaEnlazada() {
     cabeza = null;
@@ -24,6 +24,16 @@ public class ListaEnlazada {
     return aux;
   }
 
+  public int longitud() {
+    Nodo aux = cabeza;
+    int longitud = 0;
+    while (aux != null) {
+      longitud++;
+      aux = aux.getLiga();
+    }
+    return longitud;
+  }
+
   public Nodo anterior(Nodo n) {
     Nodo aux = cabeza;
     while (aux != null
@@ -33,7 +43,7 @@ public class ListaEnlazada {
     return aux;
   }
 
-  void inserta(Comparable x) {
+  public void insertar(Comparable x) {
     if (vacia())
       cabeza = new Nodo(x);
     else {
@@ -42,25 +52,29 @@ public class ListaEnlazada {
           && nodoDerecha.getInfo().equals(x))
         System.out.println("El elemeento '" + x + "' ya esta en la lista. No se admiten duplicados");
       else if (nodoDerecha == cabeza) {
-          cabeza = new Nodo(x, cabeza);
+        cabeza = new Nodo(x, cabeza);
       } else { // inserta node en medio o al final de la lista
-          Nodo nodoIzquierda = anterior(nodoDerecha);
-          nodoIzquierda.setLiga(new Nodo(x, nodoDerecha));
+        Nodo nodoIzquierda = anterior(nodoDerecha);
+        nodoIzquierda.setLiga(new Nodo(x, nodoDerecha));
       }
     }
   }
 
   void borrar(Comparable x) {
     Nodo nodo = busca(x);
-    if (nodo == null || !nodo.getInfo().equals(x)) 
+    if (nodo == null || !nodo.getInfo().equals(x))
       System.out.println("Elemento no se puede borrar.");
     else if (nodo == cabeza) {
       cabeza = nodo.getLiga();
     } else { // borrar nodo en medio o al final de la lista
-        Nodo anterior = anterior(nodo);
-        anterior.setLiga(nodo.getLiga());
+      Nodo anterior = anterior(nodo);
+      anterior.setLiga(nodo.getLiga());
     }
   }
+
+  public Nodo getCabeza() {
+    return cabeza;
+  };
 
   @Override
   public String toString() {
