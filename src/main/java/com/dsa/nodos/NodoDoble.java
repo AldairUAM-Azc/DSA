@@ -18,7 +18,7 @@ public class NodoDoble {
   }
 
   @Override
-  public String toString() {
+  public String toString() { // TODO: checar null pointers en prev y next
     return "Nodo [info=" + info + ", prev=" + prev + ", next=" + next + "]";
   }
 
