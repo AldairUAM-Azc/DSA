@@ -2,10 +2,7 @@ package com.dsa.listas;
 
 import com.dsa.nodos.Nodo;
 
-/**
- * Lista
- */
-public class ListaEnlazada {
+public class ListaLigada {
   protected Nodo cabeza;
 
   public ListaEnlazada() {
@@ -18,9 +15,8 @@ public class ListaEnlazada {
 
   public Nodo busca(Comparable x) {
     Nodo aux = cabeza;
-    while (aux != null && aux.getInfo().compareTo(x) < 0) {
+    while (aux != null && aux.getInfo().compareTo(x) < 0)
       aux = aux.getLiga();
-    }
     return aux;
   }
 
@@ -36,8 +32,7 @@ public class ListaEnlazada {
 
   public Nodo anterior(Nodo n) {
     Nodo aux = cabeza;
-    while (aux != null
-        && aux.getLiga() != n) {
+    while (aux != null && aux.getLiga() != n) {
       aux = aux.getLiga();
     }
     return aux;
@@ -48,12 +43,11 @@ public class ListaEnlazada {
       cabeza = new Nodo(x);
     else {
       Nodo nodoDerecha = busca(x);
-      if (nodoDerecha != null
-          && nodoDerecha.getInfo().equals(x))
+      if (nodoDerecha != null && nodoDerecha.getInfo().equals(x))
         System.out.println("El elemeento '" + x + "' ya esta en la lista. No se admiten duplicados");
       else if (nodoDerecha == cabeza) {
         cabeza = new Nodo(x, cabeza);
-      } else { // inserta node en medio o al final de la lista
+      } else {
         Nodo nodoIzquierda = anterior(nodoDerecha);
         nodoIzquierda.setLiga(new Nodo(x, nodoDerecha));
       }
@@ -66,7 +60,7 @@ public class ListaEnlazada {
       System.out.println("Elemento no se puede borrar.");
     else if (nodo == cabeza) {
       cabeza = nodo.getLiga();
-    } else { // borrar nodo en medio o al final de la lista
+    } else {
       Nodo anterior = anterior(nodo);
       anterior.setLiga(nodo.getLiga());
     }
@@ -78,7 +72,7 @@ public class ListaEnlazada {
 
   @Override
   public String toString() {
-    String str = new String("[ ");
+    String str = "[ ";
     Nodo aux = cabeza;
     while (aux != null) {
       str += aux.getInfo() + " ";
@@ -86,19 +80,5 @@ public class ListaEnlazada {
     }
     str += "]";
     return str;
-  }
-
-  public static void main(String[] args) {
-    ListaEnlazada miLista = new ListaEnlazada();
-    System.out.println(miLista);
-    miLista.inserta(2);
-    miLista.inserta(3);
-    miLista.inserta(1);
-    System.out.println(miLista);
-    miLista.borrar(1);
-    miLista.borrar(1);
-    miLista.borrar(2);
-    miLista.borrar(3);
-    System.out.println(miLista);
   }
 }

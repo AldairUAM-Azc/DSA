@@ -1,9 +1,9 @@
 package com.dsa.tarea4;
 
-import com.dsa.listas.ListaEnlazada;
+import com.dsa.listas.ListaLigada;
 import com.dsa.nodos.Nodo;
 
-public class Polinomio extends ListaEnlazada {
+public class Polinomio extends ListaLigada {
 
   public Polinomio() {
     super();
@@ -11,39 +11,34 @@ public class Polinomio extends ListaEnlazada {
 
   public Polinomio sumar(Polinomio p) {
     Polinomio suma = new Polinomio();
-    Nodo longest, shortest;
-    if (this.longitud() > p.longitud()) {
-      longest = this.getCabeza();
-      shortest = p.getCabeza();
-    } else {
-      longest = p.getCabeza();
-      shortest = this.getCabeza();
-    }
-    while (shortest != null) {
-      Termino termLong = (Termino) longest.getInfo();
-      Termino termShort = (Termino) shortest.getInfo();
-      if (termLong.compareTo(termShort) > 0) {
+    Nodo aux1 = cabeza, aux2 = p.getCabeza();
+    while (aux1 != null && aux2 != null) { // termina hasta que hallas recorrido la totalidad de un Polinomio
+      Termino term1 = (Termino) aux1.getInfo();
+      Termino term2 = (Termino) aux2.getInfo();
+      //Compara los terminos guardados en aux1 y aux2, luego inserta en la Lista suma el Termino con el exponente mas grande.
+      //Luego avanza la liga de la Lista correspondiente
+      if (term1.compareTo(term2) > 0) {
+        suma.insertar(term2);
+        aux2 = aux2.getLiga();
+      } else if (term1.compareTo(term2) < 0) {
+        suma.insertar(term1);
+        aux1 = aux1.getLiga();
+      } else { //si ambos terminos tienen el mismo exponente entonces inserta en suma un Termino que contenga la suma de los coeficientes de los terminos
         suma.insertar(new Termino(
-            termShort.getCoeficiente(),
-            termShort.getExponente()));
-        shortest = shortest.getLiga();
-      } else if (termLong.compareTo(termShort) < 0) {
-        suma.insertar(new Termino(
-            termLong.getCoeficiente(),
-            termLong.getExponente()));
-        longest = longest.getLiga();
-      } else {
-        suma.insertar(new Termino(
-            termLong.getCoeficiente() + termShort.getCoeficiente(),
-            termLong.getExponente()));
-        shortest = shortest.getLiga();
-        longest = longest.getLiga();
+            term1.getCoeficiente() + term2.getCoeficiente(),
+            term1.getExponente()));
+        aux1 = aux1.getLiga();
+        aux2 = aux2.getLiga();
       }
     }
-    // once there arent any term in shortest polynomial left, then copy all remaining terms of longest polynomial to suma
-    while (longest != null) { 
-      suma.insertar((Termino) longest.getInfo());
-      longest.getLiga();
+    //inserta los Terminos faltantes de alguno de los Polinomios this y p en el Polinomio suma
+    while (aux1 != null) { 
+      suma.insertar((Termino) aux1.getInfo());
+      aux1 = aux1.getLiga();
+    }
+    while (aux2 != null) { 
+      suma.insertar((Termino) aux2.getInfo());
+      aux2 = aux2.getLiga();
     }
     return suma;
   }
@@ -93,12 +88,14 @@ public class Polinomio extends ListaEnlazada {
     p5.insertar(p5Const);
     p5.insertar(p5Cuad);
 
-    System.out.println(p1);
-    System.out.println(p2);
-    System.out.println(p3);
-    System.out.println(p4);
-    System.out.println(p5);
-    
+    System.out.println("p1= " + p1);
+    System.out.println("p2= " + p2);
+    System.out.println("p3= " + p3);
+    System.out.println("p4= " + p4);
+    System.out.println("p5= " + p5);
+
+    System.out.println("p1= " + p1);
+    System.out.println("p2= " + p2);
     Polinomio p6 = p1.sumar(p2);
     System.out.println("Suma");
     System.out.println(p6);

@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Recursivo",
+            "request": "launch",
+            "mainClass": "com.dsa.recursivo.Recursivo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Polinomio",
             "request": "launch",
             "mainClass": "com.dsa.tarea4.Polinomio",

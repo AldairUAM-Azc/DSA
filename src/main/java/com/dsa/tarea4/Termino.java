@@ -1,5 +1,4 @@
 package com.dsa.tarea4;
-import com.dsa.nodos.NodoDoble;
 
 public class Termino implements Comparable<Termino>{
   private int exponente;
@@ -12,13 +11,13 @@ public class Termino implements Comparable<Termino>{
     this.exponente = exponente;
   }
 
+  // Orden de exponente descendente eg. x^2 + x + 1
   @Override
   public int compareTo(Termino t) {
-    // Orden de exponente descendente
-    if (this.exponente > t.exponente)
-      return -1;
     if (this.exponente < t.exponente)
       return 1;
+    if (this.exponente > t.exponente)
+      return -1;
     return 0;
   }
 
@@ -36,6 +35,22 @@ public class Termino implements Comparable<Termino>{
 
   public void setCoeficiente(int coeficiente) {
     this.coeficiente = coeficiente;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Termino other = (Termino) obj;
+    if (exponente != other.exponente)
+      return false;
+    if (coeficiente != other.coeficiente)
+      return false;
+    return true;
   }
 
   @Override
