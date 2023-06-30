@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ABB",
+            "request": "launch",
+            "mainClass": "com.dsa.tarea6.ABB",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
+            "name": "Recursivo",
+            "request": "launch",
+            "mainClass": "com.dsa.tarea5.Recursivo",
+            "projectName": "my-app"
+        },
+        {
+            "type": "java",
             "name": "Recursivo",
             "request": "launch",
             "mainClass": "com.dsa.recursivo.Recursivo",

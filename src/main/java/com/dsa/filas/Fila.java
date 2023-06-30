@@ -1,89 +1,77 @@
 package com.dsa.filas;
 
-import java.util.Scanner;
+import com.dsa.nodos.Nodo;
 
-class Fila {
-  private int[] info;
-  private int ultimo;
+public class Fila {
+  Nodo ultimo;
 
-  // elementos repetidos
-  // asi como llegan asi se ordenan
   public Fila() {
-    ultimo = 0;
-    System.out.println("Tamanio maximo: ");
-    Scanner s = new Scanner(System.in);
-    int max = s.nextInt();
-    s.close();
-    info = new int[max];
+    ultimo = null;
   }
 
-  public Fila(int max) {
-    ultimo = 0;
-    info = new int[max];
+  public static void main(String[] args) {
+    Fila miFila = new Fila();
+    System.out.println(miFila);
+    miFila.enqueue(3);
+    miFila.enqueue(6);
+    miFila.enqueue(1);
+    miFila.enqueue(15);
+    System.out.println(miFila);
+    miFila.dequeue();
+    System.out.println(miFila);
+    miFila.dequeue();
+    System.out.println(miFila);
+    miFila.dequeue();
+    System.out.println(miFila);
+    miFila.dequeue();
+    System.out.println(miFila);
   }
 
   public boolean vacia() {
-    return ultimo == -1;
-  };
-
-  public int buscar(int x) {
-    int i = 0;
-    while (i <= ultimo
-        && x - info[i] < 0) { // This Integer casting is BS, Fix it asap
-      i++;
-    }
-    return i;
+    return ultimo == null;
   }
 
-  public void insertar(int x) {
-    if (ultimo >= info.length - 1) {
-      System.out.println("Nos quedamos sin espacio mano");
+  public void enqueue(Comparable x) {
+    if (vacia()) {
+      ultimo = new Nodo(x, ultimo);
+      ultimo.setLiga(ultimo);
     } else {
-      int pos = buscar(x);
-      if (info[pos] == x) {
-        System.out.println("El elemento '" + x + "' ya existe");
-        return;
-      }
-      int aux = ++ultimo;
-      while (aux > pos) { // shift the elements passing the newly added element
-        info[aux] = info[aux - 1];
-        aux--;
-      }
-      info[pos] = x;
+      ultimo.setLiga(new Nodo(x, ultimo.getLiga()));
+      ultimo = ultimo.getLiga();
     }
   }
 
-  public void borrar(int x) {
-    int p = buscar(x);
-    if (!(info[p] == x)) {
-      System.out.println("Error: ele elemento no se encuentra");
+  public void dequeue() {
+    if (vacia()) {
+      throw new Error("Esta vacia");
     } else {
-      for (int i = p; i <= ultimo - 2; i++) {
-        info[i] = info[i + 1];
-      }
-      ultimo--;
+      Nodo frente = ultimo.getLiga();
+      if (frente == ultimo)
+        ultimo = null;
+      else
+        ultimo.setLiga(frente.getLiga());
+    }
+  }
+
+  public Object valorFrente() {
+    if (vacia()) {
+      throw new Error("fila vacia");
+    } else {
+      return ultimo.getLiga().getInfo();
     }
   }
 
   @Override
   public String toString() {
-    String str = new String("[ ");
-    for (int i = 0; i < ultimo; i++) {
-      str += info[i] + " ";
+    if (vacia())
+      return "Fila vacia";
+    String str = "[ ";
+    Nodo aux = ultimo.getLiga();
+    while (aux != ultimo) {
+      str += aux.getInfo() + " ";
+      aux = aux.getLiga();
     }
-    return str + "]";
-  }
-
-  public static void main(String[] args) {
-    Fila miFila = new Fila(5);
-    miFila.insertar(2);
-    miFila.insertar(4);
-    miFila.insertar(6);
-    System.out.println(miFila);
-    miFila.borrar(6);
-    System.out.println(miFila);
-    miFila.borrar(2);
-    System.out.println(miFila);
+    return str + ultimo.getInfo() + " ]";
   }
 
 }
